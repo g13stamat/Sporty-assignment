@@ -1,6 +1,6 @@
 # Sporty Assignment – Automated Testing Suite  
-Author: Giorgos  
-Role: Senior QA Engineer & Scrum Master  
+Author: Giorgos Stamatopoulos  
+QA Engineer   
 
 This repository contains a complete automated testing solution for the Sporty assignment, covering both **API** and **UI** flows.  
 The suite is built with **pytest**, **Playwright**, and **requests**, and is designed to be stable, maintainable, and easy for reviewers to execute.
@@ -32,7 +32,7 @@ The test suite validates:
 ---
 
 ## 🧱 Project Structure
-
+```
 sporty-assignment/
 │
 ├── helpers/
@@ -54,7 +54,7 @@ sporty-assignment/
 ├── README.md
 ├── test_plan.md
 └── bug_report.md
-
+```
 
 ---
 
@@ -66,45 +66,55 @@ sporty-assignment/
 python -m venv venv
 source venv/bin/activate        # macOS/Linux
 venv\Scripts\activate           # Windows
+```
 
 2. Install dependencies
-bash
+```bash
 pip install -r requirements.txt
+```
 3. Install Playwright browsers
-bash
+```bash
 playwright install
+```
 
 ▶️ How to Run the Tests
+
 Run the full suite (API + UI)
-bash
+```bash
 pytest
+```
 Run only UI tests
-bash
+```bash
 pytest -m ui --browser chromium --headed
+```
 Run only API tests
-bash
+```bash
 pytest -m api
+```
 
 🌐 Cross‑Browser Execution (UI)
 The suite supports Chromium, Firefox, and WebKit out of the box.
 
 Run all browsers:
 
-bash
+```bash
 pytest --browser all --headed
+```
 Run a specific browser:
 
-bash
+```bash
 pytest --browser chromium --headed
 pytest --browser firefox --headed
 pytest --browser webkit --headed
+```
 No code changes required — Playwright handles browser selection automatically.
 
 📸 Screenshots on Failure
 Whenever a UI test fails, a screenshot is automatically saved to:
 
-Code
+```
 /screenshots/<test_name>_<timestamp>.png
+```
 This works without any HTML report plugins, ensuring stability and reproducibility.
 
 🧪 Test Design & Strategy
@@ -131,10 +141,11 @@ Expected vs actual behavior
 
 Severity
 
-Impact on user journey
+Impact 
 
 
 🧩 Notes for the Reviewer
+
 The suite is intentionally plugin‑light to avoid cross‑platform issues.
 
 Screenshots are saved locally instead of embedded in HTML reports for maximum stability.
