@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environment
+venv/
+.env/
+
+# Playwright
+playwright-report/
+test-results/
+videos/
+traces/
+
+# Screenshots (not committed)
+screenshots/
+
+# VSCode
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
