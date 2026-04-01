@@ -60,7 +60,7 @@ sporty-assignment/
 
 ## 🚀 How to Set Up the Environment
 
-### 1. Create & activate a virtual environment
+### Create & activate a virtual environment
 
 ```bash
 python -m venv venv
@@ -68,16 +68,16 @@ source venv/bin/activate        # macOS/Linux
 venv\Scripts\activate           # Windows
 ```
 
-2. Install dependencies
+### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-3. Install Playwright browsers
+Install Playwright browsers
 ```bash
 playwright install
 ```
 
-▶️ How to Run the Tests
+### ▶️ How to Run the Tests
 
 Run the full suite (API + UI)
 ```bash
@@ -92,7 +92,7 @@ Run only API tests
 pytest -m api
 ```
 
-🌐 Cross‑Browser Execution (UI)
+### 🌐 Cross‑Browser Execution (UI)
 The suite supports Chromium, Firefox, and WebKit out of the box.
 
 Run all browsers:
@@ -109,7 +109,7 @@ pytest --browser webkit --headed
 ```
 No code changes required — Playwright handles browser selection automatically.
 
-📸 Screenshots on Failure
+### 📸 Screenshots on Failure
 Whenever a UI test fails, a screenshot is automatically saved to:
 
 ```
@@ -117,7 +117,7 @@ Whenever a UI test fails, a screenshot is automatically saved to:
 ```
 This works without any HTML report plugins, ensuring stability and reproducibility.
 
-🧪 Test Design & Strategy
+### 🧪 Test Design & Strategy
 See test_plan.md for:
 
 Scope & objectives
@@ -132,7 +132,7 @@ Browser matrix
 
 API validation approach
 
-🐞 Bug Reporting
+### 🐞 Bug Reporting
 All identified defects are documented in bug_report.md, including:
 
 Steps to reproduce
@@ -144,7 +144,23 @@ Severity
 Impact 
 
 
-🧩 Notes for the Reviewer
+### ⚙️ CI Considerations (Intentionally Disabled)
+This repository does not include GitHub Actions CI.
+This is a deliberate choice due to the constraints of the provided test environment:
+
+The test user’s balance does not reset between runs.
+
+After a few CI executions, the user would run out of credit.
+
+This would cause the UI and API tests to fail consistently, even though the automation is correct.
+
+The only workaround would be to rely on known backend defects (e.g., placing bets with negative balance), which would make the CI results misleading.
+
+To avoid a permanently red pipeline and to keep the test results meaningful, CI execution is intentionally omitted.
+
+
+
+### 🧩 Notes for the Reviewer
 
 The suite is intentionally plugin‑light to avoid cross‑platform issues.
 
